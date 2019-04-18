@@ -1,0 +1,17 @@
+<h2>View Medical Reports</h2>
+
+<h3>List of Patients</h3>
+
+<table border=2px>
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Date Of Birth</th>
+        <th>Blood Group</th>
+        <th>Sex</th>
+        <th>Action</th>
+    </tr>
+
+    <tr *ngFor="let patientItem of patientItems" 
+    patient [patientItem]="patientItem"></tr>
+</table>

@@ -2,8 +2,17 @@
 <div style="text-align:center">
   <h1>
     Welcome to <br> {{ title }}!
+    
   </h1>
 </div>
+<div>
+<patient-list></patient-list>
 
-
+<!-- <patient 
+[patientItem]="firstPatientItem"
+(delete)="onPatientDelete($event)"
+(edit)="onPatientEdit($event)"
+(showReport)="onPatientShowReport($event)"
+></patient> -->
+</div>
 <router-outlet></router-outlet>
