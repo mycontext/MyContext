@@ -1,6 +1,5 @@
-<h2>View Medical Reports</h2>
 
-<h3>List of Patients</h3>
+<h2>List of Patients</h2>
 
 <table border=2px>
     <tr>
@@ -13,5 +12,8 @@
     </tr>
 
     <tr *ngFor="let patientItem of patientItems" 
-    patient [patientItem]="patientItem"></tr>
+    patient [patientItem]="patientItem"
+    (delete)="onPatientDelete($event)"
+    (edit)="onPatientEdit($event)"
+    (showReport)="onPatientShowReport($event)"></tr>
 </table>

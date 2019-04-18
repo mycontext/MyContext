@@ -9,28 +9,54 @@ import { Component } from '@angular/core';
       onReportDelete(reportItem){}
       onReportEdit(reportItem){}
 
-      patientItems=[
+      reportItems=[
             {
-            mr_id:1,
-            p_name:"kakashi hatake",
-            p_dob:"21/12/1991",
-            p_bloodGroup:"O+",
-            p_sex:"m"
+                p_id:1,
+                mr_id:101,
+                mr_date:"2/4/2019",
+                mr_type:"RBC",
+                mr_diagnosis:"Excellent"
 
-            },{
-            p_id:2,
-            p_name:"naruto uzumaki",
-            p_dob:"1/11/1995",
-            p_bloodGroup:"A+",
-            p_sex:"m"
+            },
+            {
+                p_id:1,
+                mr_id:110,
+                mr_date:"1/8/2019",
+                mr_type:"WBC",
+                mr_diagnosis:"Ver Bad"
 
-            },{
-            p_id:3,
-            p_name:"sasuke uchiha",
-            p_dob:"13/07/1997",
-            p_bloodGroup:"B-",
-            p_sex:"m"
+            },
+            {
+                p_id:2,
+                mr_id:150,
+                mr_date:"3/3/2019",
+                mr_type:"X-RAY",
+                mr_diagnosis:"Normal"
 
+            },
+            {
+                p_id:3,
+                mr_id:150,
+                mr_date:"3/3/2019",
+                mr_type:"Mammogram",
+                mr_diagnosis:"Excellent"
+    
+            },
+            {
+                p_id:3,
+                mr_id:150,
+                mr_date:"3/3/2019",
+                mr_type:"Ultra sound",
+                mr_diagnosis:"Bad"
+
+            },
+            {
+                p_id:3,
+                mr_id:150,
+                mr_date:"3/3/2019",
+                mr_type:"Biospy",
+                mr_diagnosis:"Good"
+    
             }
 
 
