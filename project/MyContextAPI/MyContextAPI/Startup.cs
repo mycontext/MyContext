@@ -7,11 +7,14 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Versioning;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using MyContextAPI.FIlters;
+using MyContextAPI.Model;
+using MyContextAPI.Model.Model;
 using NSwag.AspNetCore;
 
 namespace MyContextAPI
@@ -28,6 +31,10 @@ namespace MyContextAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            // use in memory database
+
+            services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("mydb"));
             services
                 .AddMvc(options =>
                 {

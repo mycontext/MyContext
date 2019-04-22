@@ -3,16 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 using MyContextAPI.Model.Model;
 
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace MyContextAPI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CompanyController : ControllerBase
+     
+    public class CompanyController : BaseController
     {
+        public CompanyController(IOptions<AppSettings> options)
+        {
+            _appSettings = options.Value;
+        }
         // GET: /<controller>/
         [Route("[action]")]
         public IActionResult GetCompanies()
@@ -23,6 +27,11 @@ namespace MyContextAPI.Controllers
             PatientList.Add(new CompanyDTO { ID = Guid.NewGuid(), CompanyReferenceID = "CP00003", Name = "com3", Description = "Description", });
             PatientList.Add(new CompanyDTO { ID = Guid.NewGuid(), CompanyReferenceID = "CP00004", Name = "com4", Description = "Description", });
             return Ok(PatientList);
+        }
+        [Route("[action]")]
+        public IActionResult GetSetting()
+        {
+            return Ok(_appSettings);
         }
 
     }
