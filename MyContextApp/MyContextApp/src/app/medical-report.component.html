@@ -4,6 +4,6 @@
 <td>{{reportItem.mr_type}}</td>
 <td>{{reportItem.mr_diagnosis}}</td>
 <td>
-    <a class="p_edit" (click)="onEdit()">Edit</a> <br>
-    <a class='p_delete' (click)="onDelete()">Delete</a><br>
+    <a class="p_edit" (click)="onReportEdit(reportItem.mr_id)">Edit</a> <br>
+    <a class='p_delete' (click)="onReportDelete()">Delete</a><br>
 </td>

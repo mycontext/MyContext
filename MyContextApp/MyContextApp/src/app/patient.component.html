@@ -7,5 +7,5 @@
 <td>
     <a class="p_edit" (click)="onEdit()">Edit</a> <br>
     <a class='p_delete' (click)="onDelete()">Delete</a><br>
-    <a class='p_showReport' (click)="onShowReport()">Report</a>
+    <a routerLink="/{{patientItem.p_id}}">Report</a>
 </td>

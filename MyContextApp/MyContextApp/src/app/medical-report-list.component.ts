@@ -1,4 +1,8 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute} from '@angular/router';
+
+
+import {MedicalReportService} from './medical-report.service';
 
 @Component({
     selector: 'report-list',
@@ -6,64 +10,28 @@ import { Component } from '@angular/core';
   })
   export class MedicalReportListComponent {
 
-      onReportDelete(reportItem){}
-      onReportEdit(reportItem){}
+    reportItems;
 
-      reportItems=[
-            {
-                p_id:1,
-                mr_id:101,
-                mr_date:"2/4/2019",
-                mr_type:"RBC",
-                mr_diagnosis:"Excellent"
+    constructor(private medicalReportService: MedicalReportService,
+      private activatedRoute: ActivatedRoute){}
 
-            },
-            {
-                p_id:1,
-                mr_id:110,
-                mr_date:"1/8/2019",
-                mr_type:"WBC",
-                mr_diagnosis:"Ver Bad"
+    ngOnInit(){
+      this.reportItems=this.medicalReportService.get('');
+      //  this.activatedRoute.params.subscribe(params =>{
+      //    let p_id=params['p_id'];
+      //    if(p_id.toLowerCase()==='all'){
+      //      p_id='';
+      //      console.log('all it is');
+      //    }
+      //    this.reportItems=this.medicalReportService.get(p_id);
+      //  });
+    }
 
-            },
-            {
-                p_id:2,
-                mr_id:150,
-                mr_date:"3/3/2019",
-                mr_type:"X-RAY",
-                mr_diagnosis:"Normal"
+    onReportDelete(reportItem){
+        this.medicalReportService.delete(reportItem);
+    }
+    onReportEdit(reportItem){}
 
-            },
-            {
-                p_id:3,
-                mr_id:150,
-                mr_date:"3/3/2019",
-                mr_type:"Mammogram",
-                mr_diagnosis:"Excellent"
     
-            },
-            {
-                p_id:3,
-                mr_id:150,
-                mr_date:"3/3/2019",
-                mr_type:"Ultra sound",
-                mr_diagnosis:"Bad"
-
-            },
-            {
-                p_id:3,
-                mr_id:150,
-                mr_date:"3/3/2019",
-                mr_type:"Biospy",
-                mr_diagnosis:"Good"
-    
-            }
-
-
-]
-
-
-
-
   }
   

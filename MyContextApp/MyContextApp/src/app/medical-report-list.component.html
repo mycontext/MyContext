@@ -12,6 +12,6 @@
 
     <tr *ngFor="let reportItem of reportItems" 
     m-report [reportItem]="reportItem"
-    (delete)="onPatientDelete($event)"
-    (edit)="onPatientEdit($event)"></tr>
+    (delete)="onReportDelete($event)"
+    (edit)="onReportEdit($event)"></tr>
 </table>

@@ -1,0 +1,29 @@
+
+<h2>Add Report</h2>
+<form  
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)">
+<label>Patient ID</label>
+<input type="text" name="p_id" id="p_id" formControlName="p_id"> <br>
+
+<label>Report ID</label>
+<input type="text" name="mr_id" id="mr_id" formControlName="mr_id"><br>
+
+<label>Report Date</label>
+<input type="text" name="mr_date" id="mr_date" formControlName="mr_date"><br>
+
+<label>Report Type</label>
+<select name="mr_type" id="mr_type" formControlName="mr_type">
+    <option value="RBC">RBC</option>
+    <option value="WBC">WBC</option>
+    <option value="X-RAY">X-RAY</option>
+    <option value="MEMOGRAM">MEMOGRAM</option>
+    <option value="ULTRASOUND">ULTRASOUND</option>
+</select><br>
+
+<label>Diagnosis</label>
+<input type="text" name="mr_diagnosis" id="mr_diagnosis" formControlName="mr_diagnosis"><br>
+
+<button type="submit">ADD</button>
+
+</form>

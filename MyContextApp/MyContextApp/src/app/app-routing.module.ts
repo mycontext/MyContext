@@ -1,7 +1,21 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-const routes: Routes = [];
+import {MedicalReportAddFormComponent} from './medical-report-add-form.component';
+import {MedicalReportEditFormComponent} from './medical-report-edit-form.component';
+import {PatientListComponent} from './patient-list.component';
+import {MedicalReportListComponent} from './medical-report-list.component';
+
+
+const routes: Routes = [
+  {path: 'addreport', component: MedicalReportAddFormComponent},
+  {path: 'editreport/:reportId', component: MedicalReportEditFormComponent},
+  {path: 'patientlist', component: PatientListComponent},
+  {path: 'reportlist', component: MedicalReportListComponent},
+  {path: 'reportlist/:patientId', component: MedicalReportListComponent},
+  {path: '', pathMatch: 'full', redirectTo: 'reportlist'}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
