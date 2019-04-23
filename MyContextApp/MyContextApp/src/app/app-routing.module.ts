@@ -9,10 +9,10 @@ import {MedicalReportListComponent} from './medical-report-list.component';
 
 const routes: Routes = [
   {path: 'addreport', component: MedicalReportAddFormComponent},
-  {path: 'editreport/:reportId', component: MedicalReportEditFormComponent},
+  {path: 'editreport/:reportid', component: MedicalReportEditFormComponent},
   {path: 'patientlist', component: PatientListComponent},
   {path: 'reportlist', component: MedicalReportListComponent},
-  {path: 'reportlist/:patientId', component: MedicalReportListComponent},
+  {path: 'reportlist/:patientid', component: MedicalReportListComponent},
   {path: '', pathMatch: 'full', redirectTo: 'reportlist'}
 
 ];

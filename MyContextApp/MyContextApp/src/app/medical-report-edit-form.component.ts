@@ -16,28 +16,30 @@ import {ActivatedRoute, ActivationEnd} from '@angular/router';
         private meidcalReportService: MedicalReportService,
         private route: ActivatedRoute){}
 
-
+        reportItem;
     ngOnInit(){
 
-        this.form=this.formBuilder.group({
-            p_id: this.formBuilder.control(''),
-            mr_id: this.formBuilder.control(''),
-            mr_date: this.formBuilder.control(''),
-            mr_type: this.formBuilder.control(''),
-            mr_diagnosis: this.formBuilder.control('')
-
-        });
-
         this.route.paramMap.subscribe(params=>{
-            const reportId=+params.get('reportId');
+            const reportId=+params.get('reportid');
             if(reportId){
                 this.getReport(reportId);
+
+                this.form=this.formBuilder.group({
+                    p_id: this.formBuilder.control(this.reportItem.p_id),
+                    mr_id: this.formBuilder.control(this.reportItem.mr_id),
+                    mr_date: this.formBuilder.control(this.reportItem.mr_date),
+                    mr_type: this.formBuilder.control(this.reportItem.mr_type),
+                    mr_diagnosis: this.formBuilder.control(this.reportItem.mr_diagnosis)
+        
+                });
+
             }
+            
         });
     }
 
     getReport(reportId: number){
-        //this.meidcalReportService.getReport(reportId).subscribe((reportItem));
+        this.reportItem=this.meidcalReportService.getOneMedicalReport(reportId);
     }
 
     onSubmit(reportItem){

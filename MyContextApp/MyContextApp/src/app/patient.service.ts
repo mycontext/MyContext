@@ -1,3 +1,6 @@
+import {Injectable} from '@angular/core';
+
+@Injectable()
 export class PatientService{
 
     get(){
@@ -38,9 +41,19 @@ export class PatientService{
         p_sex:"m"
 
         }
-
-
         ]
 
 
+}
+
+interface PatientItem{
+    p_id:number;
+    p_name:string;
+    p_dob:string;
+    p_bloodGroup:string;
+    p_sex:string;
+}
+
+interface PatientItems{
+    patientItems: PatientItem[];
 }

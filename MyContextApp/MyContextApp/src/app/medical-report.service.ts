@@ -1,19 +1,39 @@
+import {Injectable} from '@angular/core';
+
+//@Injectable()
 export class MedicalReportService{
 
 
 
-get(p_id){
-    if(p_id===''){
-        return this.reportItems;
-    }
-    else{
+get(){
 
-    }
+    return this.reportItems;
     
 }
 
-getReport(reportId){
-    return this.onereportitem;
+getOnePatientReport(patientId:number){
+    let foundReport=[];
+
+    for(let i=0;i<this.reportItems.length;i++){
+        
+        if(this.reportItems[i].p_id==patientId){
+            
+            foundReport.push(this.reportItems[i]);
+        }
+    }
+    return foundReport;
+    
+}
+
+getOneMedicalReport(reportId:number){
+    for(let i=0;i<this.reportItems.length;i++){
+        
+        if(this.reportItems[i].mr_id==reportId){
+            
+            return this.reportItems[i];
+        }
+    }
+    return null;
     
 }
 
@@ -22,7 +42,17 @@ add(reportItem){
 }
 
 edit(reportItem){
-    this.reportItems.push(reportItem);
+    for(let i=0;i<this.reportItems.length;i++){
+        if(reportItem.mr_id==this.reportItems[i].mr_id){
+            this.reportItems[i].p_id=reportItem.p_id;
+            this.reportItems[i].mr_date=reportItem.mr_date;
+            this.reportItems[i].mr_type=reportItem.mr_type;
+            this.reportItems[i].mr_diagnosis=reportItem.mr_diagnosis;
+        }
+        console.log('success');
+
+    }
+
 }
 
 delete(reportItem){
@@ -31,12 +61,6 @@ delete(reportItem){
         this.reportItems.splice(index,1);
     }
 }
-
-onereportitem={p_id:1,
-    mr_id:101,
-    mr_date:"2/4/2019",
-    mr_type:"RBC",
-    mr_diagnosis:"Excellent"};
 
 reportItems=[
             {
@@ -49,7 +73,7 @@ reportItems=[
             },
             {
                 p_id:1,
-                mr_id:110,
+                mr_id:102,
                 mr_date:"1/8/2019",
                 mr_type:"WBC",
                 mr_diagnosis:"Very Bad"
@@ -57,7 +81,7 @@ reportItems=[
             },
             {
                 p_id:2,
-                mr_id:150,
+                mr_id:103,
                 mr_date:"3/3/2019",
                 mr_type:"X-RAY",
                 mr_diagnosis:"Normal"
@@ -65,7 +89,7 @@ reportItems=[
             },
             {
                 p_id:3,
-                mr_id:150,
+                mr_id:104,
                 mr_date:"3/3/2019",
                 mr_type:"MAMMOGRAM",
                 mr_diagnosis:"Excellent"
@@ -73,7 +97,7 @@ reportItems=[
             },
             {
                 p_id:3,
-                mr_id:150,
+                mr_id:105,
                 mr_date:"3/3/2019",
                 mr_type:"ULTRASOUND",
                 mr_diagnosis:"Bad"
@@ -81,7 +105,7 @@ reportItems=[
             },
             {
                 p_id:3,
-                mr_id:150,
+                mr_id:106,
                 mr_date:"3/3/2019",
                 mr_type:"Biospy",
                 mr_diagnosis:"Good"
@@ -90,4 +114,17 @@ reportItems=[
 
 
             ]
+}
+
+interface ReportItem{
+    p_id:number;
+    mr_id:number;
+    mr_date:string;
+    mr_type:string;
+    mr_diagnosis:string;
+
+}
+
+interface ReportItemResponse{
+    reportItems: ReportItem[];
 }

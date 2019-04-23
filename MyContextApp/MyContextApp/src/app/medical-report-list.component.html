@@ -10,7 +10,7 @@
         <th>Action</th>
     </tr>
 
-    <tr *ngFor="let reportItem of reportItems" 
+    <tr *ngFor="let reportItem of reportItems"
     m-report [reportItem]="reportItem"
     (delete)="onReportDelete($event)"
     (edit)="onReportEdit($event)"></tr>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 
-
+import {MedicalReportService} from './medical-report.service'
 import {PatientService} from './patient.service';
 
 @Component({
@@ -12,7 +12,8 @@ import {PatientService} from './patient.service';
 
       patientItems;
 
-      constructor(private patientServices: PatientService){}
+      constructor(private patientServices: PatientService,
+        private medicalReportService: MedicalReportService){}
       
       ngOnInit(){
         this.patientItems=this.patientServices.get();
@@ -24,7 +25,10 @@ import {PatientService} from './patient.service';
 
       }
       onPatientEdit(patientItem){}
-      onPatientShowReport(patientItem){}
+
+      onPatientShowReport(patientItem){
+        this.medicalReportService.getOnePatientReport(patientItem.p_id);
+      }
 
       
 

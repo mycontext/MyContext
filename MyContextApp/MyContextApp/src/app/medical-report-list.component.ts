@@ -13,10 +13,24 @@ import {MedicalReportService} from './medical-report.service';
     reportItems;
 
     constructor(private medicalReportService: MedicalReportService,
-      private activatedRoute: ActivatedRoute){}
+      private route: ActivatedRoute){}
 
     ngOnInit(){
-      this.reportItems=this.medicalReportService.get('');
+      
+      this.route.paramMap.subscribe(params=>{
+        const p_id=params.get('patientid');
+        if(p_id){
+                    
+          this.getReport(p_id);
+        }
+        else{
+          this.reportItems=this.medicalReportService.get();
+        }
+      });
+
+      //this.reportItems=this.medicalReportService.get('');                   NORMAL
+
+
       //  this.activatedRoute.params.subscribe(params =>{
       //    let p_id=params['p_id'];
       //    if(p_id.toLowerCase()==='all'){
@@ -27,8 +41,15 @@ import {MedicalReportService} from './medical-report.service';
       //  });
     }
 
+    getReport(patientId){
+      
+      this.reportItems=this.medicalReportService.getOnePatientReport(patientId);
+
+    }
+
+
     onReportDelete(reportItem){
-        this.medicalReportService.delete(reportItem);
+      this.medicalReportService.delete(reportItem);
     }
     onReportEdit(reportItem){}
 

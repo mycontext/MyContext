@@ -1,10 +1,15 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
+import {Router } from '@angular/router';
+
 @Component({
     selector: '[patient]',
     templateUrl: './patient.component.html'
   })
   export class PatientComponent {
+
+    constructor(private _router:Router){}
+
     @Input() patientItem;
     
     @Output() edit= new EventEmitter();
@@ -21,8 +26,9 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
         this.delete.emit(this.patientItem);
     }
 
-    onShowReport(){
-      this.showReport.emit(this.patientItem);
+    onShowReport(patientId: number){
+      this._router.navigate(['/reportlist',patientId]);
+
   }
   
   }
