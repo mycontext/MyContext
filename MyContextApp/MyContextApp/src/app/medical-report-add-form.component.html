@@ -1,29 +1,52 @@
 
 <h2>Add Report</h2>
+<br>
 <form  
 [formGroup]="form"
 (ngSubmit)="onSubmit(form.value)">
-<label>Patient ID</label>
-<input type="text" name="p_id" id="p_id" formControlName="p_id"> <br>
 
-<label>Report ID</label>
-<input type="text" name="mr_id" id="mr_id" formControlName="mr_id"><br>
 
-<label>Report Date</label>
-<input type="text" name="mr_date" id="mr_date" formControlName="mr_date"><br>
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Patient ID</label>
+    <div class="col-sm-4">
+        <input class="form-control" type="text" name="p_id" id="p_id" formControlName="p_id">
+    </div>
+</div>
 
-<label>Report Type</label>
-<select name="mr_type" id="mr_type" formControlName="mr_type">
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Report ID</label>
+    <div class="col-sm-4">
+        <input class="form-control" type="text" name="mr_id" id="mr_id" formControlName="mr_id">
+    </div>
+</div>
+
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Report Date</label>
+<div class="col-sm-4">
+<input class="form-control" type="text" name="mr_date" id="mr_date" formControlName="mr_date">
+</div>
+</div>
+
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Report Type</label>
+<div class="col-sm-4">
+<select class="form-control" name="mr_type" id="mr_type" formControlName="mr_type">
     <option value="RBC">RBC</option>
     <option value="WBC">WBC</option>
     <option value="X-RAY">X-RAY</option>
     <option value="MAMMOGRAM">MAMMOGRAM</option>
     <option value="ULTRASOUND">ULTRASOUND</option>
-</select><br>
+</select>
+</div>
+</div>
 
-<label>Diagnosis</label>
-<input type="text" name="mr_diagnosis" id="mr_diagnosis" formControlName="mr_diagnosis"><br>
+<div class="form-group row">
+<label class="col-sm-2 col-form-label">Diagnosis</label>
+<div class="col-sm-4">
+<input class="form-control" type="text" name="mr_diagnosis" id="mr_diagnosis" formControlName="mr_diagnosis">
+</div>
+</div>
 
-<button type="submit">ADD</button>
+<button type="submit" class="btn btn-primary">ADD</button>
 
 </form>

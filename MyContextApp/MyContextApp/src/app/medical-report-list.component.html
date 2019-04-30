@@ -1,17 +1,23 @@
+<div>
+
 <h2>View Medical Reports</h2>
-
-<table border=2px>
-    <tr>
-        <th>Patient ID</th>
-        <th>Report ID</th>
-        <th>Report Date</th>
-        <th>Report Type</th>
-        <th>Diagnosis</th>
-        <th>Action</th>
-    </tr>
-
-    <tr *ngFor="let reportItem of reportItems"
-    m-report [reportItem]="reportItem"
-    (delete)="onReportDelete($event)"
-    (edit)="onReportEdit($event)"></tr>
+<br>
+<table class="table table-striped table-hover">
+        <tr>
+            <th>Patient ID</th>
+            <th>Report ID</th>
+            <th>Report Date</th>
+            <th>Report Type</th>
+            <th>Diagnosis</th>
+            <th>Action</th>
+        </tr>
+    
+        <tr *ngFor="let reportItem of reportItems"
+        m-report [reportItem]="reportItem"
+        (delete)="onReportDelete($event)"
+        (edit)="onReportEdit($event)"></tr>
+    
 </table>
+</div>
+
+
