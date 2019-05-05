@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using MyContextAPI.Model.Model;
+using MyContextAPI.Model.Models;
 
 namespace MyContextAPI.Controllers
 {

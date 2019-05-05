@@ -1,7 +1,8 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using MyContextAPI.Model.Model; 
+using MyContextAPI.Common.Infastructure;
+using MyContextAPI.Model.Models;
 
 namespace MyContextAPI.FIlters
 {
@@ -20,12 +21,12 @@ namespace MyContextAPI.FIlters
             if (_env.IsDevelopment())
             {
                 error.Message = context.Exception.Message;
-                error.Details = context.Exception.StackTrace;
+                error.Detail = context.Exception.StackTrace;
             }
             else
             {
                 error.Message = "A server error occurred.";
-                error.Details = context.Exception.Message;
+                error.Detail = context.Exception.Message;
             }          
            
             context.Result = new ObjectResult(error)

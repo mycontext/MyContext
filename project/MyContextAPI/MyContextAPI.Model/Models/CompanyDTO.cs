@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace MyContextAPI.Model.Model
+namespace MyContextAPI.Model.Models
 {
     public class CompanyDTO:Resource
     {

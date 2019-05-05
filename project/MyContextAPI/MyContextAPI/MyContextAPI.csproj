@@ -11,11 +11,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning" Version="3.0.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.8.0" />
     <PackageReference Include="NSwag.AspNetCore" Version="12.1.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MyContextAPI.Common\MyContextAPI.Common.csproj" />
     <ProjectReference Include="..\MyContextAPI.Model\MyContextAPI.Model.csproj" />
+    <ProjectReference Include="..\MyContextAPI.Services\MyContextAPI.Services.csproj" />
   </ItemGroup>
 
 </Project>

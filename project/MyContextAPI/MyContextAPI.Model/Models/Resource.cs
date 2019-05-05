@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace MyContextAPI.Model.Model
+namespace MyContextAPI.Model.Models
 {
     public abstract class Resource
     {[JsonProperty(Order=-2)]
