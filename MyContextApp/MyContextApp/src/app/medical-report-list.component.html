@@ -18,6 +18,9 @@
         (edit)="onReportEdit($event)"></tr>
     
 </table>
+
 </div>
 
-
+<popup #popup1 (confirmClick)="YourConfirmEvent()" (cancelClick)="YourCancelEvent()">
+    Are you sure you want to delete Medical Report: {{currentReportItem.mr_id}}?
+</popup>

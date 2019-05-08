@@ -39,6 +39,7 @@ getOneMedicalReport(reportId:number){
 
 add(reportItem){
     this.reportItems.push(reportItem);
+    return true;
 }
 
 edit(reportItem){
@@ -52,7 +53,7 @@ edit(reportItem){
         console.log('success');
 
     }
-
+    return true;
 }
 
 delete(reportItem){
@@ -60,6 +61,7 @@ delete(reportItem){
     if(index>=0){
         this.reportItems.splice(index,1);
     }
+    return true;
 }
 
 reportItems=[

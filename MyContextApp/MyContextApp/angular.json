@@ -80,7 +80,10 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.css","styles.scss",
+              "../node_modules/ngx-toastr/toastr.css"
+              
+              
             ],
             "scripts": [],
             "assets": [

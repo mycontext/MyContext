@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http'
+import { BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {ToastrModule} from 'ngx-toastr';
+import {PopupModule} from 'ng2-opd-popup';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,13 +25,17 @@ import {MedicalReportService} from './medical-report.service';
     MedicalReportComponent,
     MedicalReportListComponent,
     MedicalReportAddFormComponent,
-    MedicalReportEditFormComponent
+    MedicalReportEditFormComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+     PopupModule.forRoot()
   ],
   providers: [
     PatientService,

@@ -1,14 +1,15 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import {Router} from '@angular/router';
 
+
 @Component({
     selector: '[m-report]',
     templateUrl: './medical-report.component.html'
   })
   export class MedicalReportComponent {
-
+   
     constructor(private _router: Router){}
-
+    
     @Input() reportItem;
     
     @Output() edit= new EventEmitter();
@@ -25,6 +26,7 @@ import {Router} from '@angular/router';
     }
 
     onReportDelete(){
+        
         this.delete.emit(this.reportItem);
     }
 

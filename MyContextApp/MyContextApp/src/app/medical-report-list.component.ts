@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-
+import {Popup} from 'ng2-opd-popup';
+import { ToastrService} from 'ngx-toastr';
 
 import {MedicalReportService} from './medical-report.service';
 
@@ -9,11 +10,17 @@ import {MedicalReportService} from './medical-report.service';
     templateUrl: './medical-report-list.component.html'
   })
   export class MedicalReportListComponent {
-
+    currentReportItem;
     reportItems;
+    @ViewChild('popup1') popup1: Popup;
+    
 
     constructor(private medicalReportService: MedicalReportService,
-      private route: ActivatedRoute){}
+      private route: ActivatedRoute,private toastr: ToastrService){
+
+      }
+
+      
 
     ngOnInit(){
       
@@ -28,17 +35,6 @@ import {MedicalReportService} from './medical-report.service';
         }
       });
 
-      //this.reportItems=this.medicalReportService.get('');                   NORMAL
-
-
-      //  this.activatedRoute.params.subscribe(params =>{
-      //    let p_id=params['p_id'];
-      //    if(p_id.toLowerCase()==='all'){
-      //      p_id='';
-      //      console.log('all it is');
-      //    }
-      //    this.reportItems=this.medicalReportService.get(p_id);
-      //  });
     }
 
     getReport(patientId){
@@ -49,10 +45,42 @@ import {MedicalReportService} from './medical-report.service';
 
 
     onReportDelete(reportItem){
-      this.medicalReportService.delete(reportItem);
+      this.currentReportItem=reportItem;
+      this.popup1.options = {
+        header: "DELETE",
+        color: "#d9534f", // red, blue....
+        widthProsentage: 20, // The with of the popou measured by browser width
+        animationDuration: .05, // in seconds, 0 = no animation
+        showButtons: true, // You can hide this in case you want to use custom buttons
+        confirmBtnContent: "DELETE", // The text on your confirm button
+        cancleBtnContent: "Cancel", // the text on your cancel button
+        confirmBtnClass: "btn btn-default", // your class for styling the confirm button
+        cancleBtnClass: "btn btn-default", // you class for styling the cancel button
+        animation: "bounceIn" // 'fadeInLeft', 'fadeInRight', 'fadeInUp', 'bounceIn','bounceInDown'
+    };
+      this.popup1.show(this.popup1.options);
+      //this.medicalReportService.delete(reportItem);
     }
     onReportEdit(reportItem){}
 
+    YourConfirmEvent(){
+      if(this.medicalReportService.delete(this.currentReportItem)){
+        this.showSuccess(this.currentReportItem);
+      }
+      this.popup1.hide();
+    }
+     
+    YourCancelEvent(){
+      //alert('You cliked cancel');
+    }
+
+    showSuccess(reportItem) {
+
+      this.toastr.error( 'Report ID : '+reportItem.mr_id,'Medical Report DELETED!',{
+          timeOut: 3000,
+          positionClass: 'toast-top-right'
+        });
+    }
     
   }
   

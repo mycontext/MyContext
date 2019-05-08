@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder} from '@angular/forms';
 import { MedicalReportService} from './medical-report.service';
 import {ActivatedRoute, ActivationEnd} from '@angular/router';
+import { ToastrService} from 'ngx-toastr';
 
 @Component({
     selector: 'mr-edit-form',
@@ -14,7 +15,8 @@ import {ActivatedRoute, ActivationEnd} from '@angular/router';
 
     constructor(private formBuilder : FormBuilder, 
         private meidcalReportService: MedicalReportService,
-        private route: ActivatedRoute){}
+        private route: ActivatedRoute,
+        private toastr: ToastrService){}
 
         reportItem;
     ngOnInit(){
@@ -43,8 +45,17 @@ import {ActivatedRoute, ActivationEnd} from '@angular/router';
     }
 
     onSubmit(reportItem){
-        this.meidcalReportService.edit(reportItem);
+        if(this.meidcalReportService.edit(reportItem)){
+            this.showSuccess(reportItem);
+        }
+        
     }
+    showSuccess(reportItem) {
 
+        this.toastr.success( 'Report ID : '+reportItem.mr_id,'Medical Report Edited!',{
+            timeOut: 3000,
+            positionClass: 'toast-top-right'
+          });
+      }
 
   }
