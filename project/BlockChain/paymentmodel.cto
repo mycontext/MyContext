@@ -1,0 +1,31 @@
+namespace org.example.mynetwork
+asset HealthRecord identified by recordId {
+    o String recordId
+    o String transactionId
+    o String description
+    o String treatmentPlanId
+    o String patientId
+    o String recorderId
+    --> TraderPatient recordOwner
+    --> TraderRecorder recordWriter
+    --> TraderBuyer  recordBuyer
+}
+participant TraderPatient identified by patientId {
+    o String patientId
+    o String name
+    o String description
+}
+participant TraderRecorder identified by recorderId {
+    o String  recorderId
+    o String  recorderReference
+    o String description
+}
+participant TraderBuyer identified by buyerId {
+    o String  buyerId
+    o String  buyerReference
+    o String  buyerDescription
+}
+transaction RecordTrade {
+    --> HealthRecord record
+    --> TraderBuyer  recordBuyer
+}
