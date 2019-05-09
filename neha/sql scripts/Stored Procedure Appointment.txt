@@ -1,0 +1,148 @@
+#Insert Appointment
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_insertAppointment]    Script Date: 9/05/2019 5:49:58 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE procedure [dbo].[sp_insertAppointment]
+(
+@PID INT,    
+@DID INT,  
+@aptime date
+)
+
+AS
+Begin
+insert into Appointment values(@PID,@DID,@aptime)
+end
+GO
+
+
+
+
+
+#update Appointment
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_updateAppointment]    Script Date: 9/05/2019 5:50:14 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[sp_updateAppointment]
+(
+@ID Int,
+@PID Int,    
+@DID Int,  
+@aptime date
+)
+
+AS
+Begin
+UPDATE Appointment SET  
+PID= @PID, DID = @DID, aptime = @aptime
+WHERE id = @ID
+end
+GO
+
+
+#Delete Appointment
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_deleteAppointment]    Script Date: 9/05/2019 5:50:26 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create procedure [dbo].[sp_deleteAppointment]
+(
+@ID Int
+
+)
+
+AS
+Begin
+Delete from Appointment
+WHERE id = @ID
+end
+
+GO
+
+
+
+
+#Select Appointment
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectAppointment]    Script Date: 9/05/2019 5:50:38 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectAppointment]
+(
+@ID INT
+
+)
+
+AS
+Begin
+Select * from Appointment
+where id=@ID
+end
+GO
+
+
+
+
+
+#Select All Appointment
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectAllAppointment]    Script Date: 9/05/2019 5:50:48 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectAllAppointment]
+
+
+AS
+Begin
+Select * from Appointment
+
+end
+GO
+

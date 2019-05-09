@@ -1,0 +1,148 @@
+#Insert Report
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_insertReport]    Script Date: 9/05/2019 5:47:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE procedure [dbo].[sp_insertReport]
+(
+@PID INT,
+@AID INT,
+@DID INT,
+@fileUrl varchar
+)
+
+AS
+Begin
+insert into Report values(@PID,@AID,@DID,@fileUrl)
+
+end
+
+
+exec sp_insertReport 890,233,456,'www.sdssj.com'
+GO
+
+
+
+#Update Report
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_updateReport]    Script Date: 9/05/2019 5:47:57 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[sp_updateReport]
+(
+@ID INT,
+@PID INT,
+@AID INT,
+@DID INT,
+@fileUrl varchar
+)
+
+AS
+Begin
+UPDATE Report SET  
+PID= @PID, AID= @AID, DID = @DID, fileUrl=@fileUrl
+WHERE id = @ID
+end
+GO
+
+
+#delete Report
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_deleteReport]    Script Date: 9/05/2019 5:48:07 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create procedure [dbo].[sp_deleteReport]
+(
+@ID Int
+
+)
+
+AS
+Begin
+Delete from Report
+WHERE id = @ID
+end
+
+GO
+
+
+
+#Select Report
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectReport]    Script Date: 9/05/2019 5:48:19 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectReport]
+(
+@ID INT
+
+)
+
+AS
+Begin
+Select * from Report
+where id=@ID
+end
+GO
+
+
+#Select All Report
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectAllReport]    Script Date: 9/05/2019 5:48:34 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectAllReport]
+
+
+AS
+Begin
+Select * from Report
+
+end
+GO
+
