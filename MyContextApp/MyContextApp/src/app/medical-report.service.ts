@@ -70,7 +70,7 @@ reportItems=[
                 mr_id:101,
                 mr_date:"2/4/2019",
                 mr_type:"RBC",
-                mr_diagnosis:"Excellent"
+                mr_diagnosis:"Normal"
 
             },
             {
@@ -94,7 +94,7 @@ reportItems=[
                 mr_id:104,
                 mr_date:"3/3/2019",
                 mr_type:"MAMMOGRAM",
-                mr_diagnosis:"Excellent"
+                mr_diagnosis:"Normal"
     
             },
             {
