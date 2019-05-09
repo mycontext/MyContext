@@ -1,0 +1,22 @@
+How to cretate a database using Xampp:
+1)Click the Admin... button at MySQL in the XAMPP Control Panel so that phpMyAdmin is opened in the browser.
+Create a new database.
+ 2)Click Databases tab at the top. Write mlinvoice in the Create database field. ...
+Add a new user to the database. 
+3)Click the Privileges tab at the top.
+How to creat tables in database using xampp:
+1)Open your web browser and type localhost/phpmyadmin into your address bar. ...
+Enter Table Name , Number of columns you want to create in Table for example ( Id, name, roll_No, address…etc ).
+Then press GO button.
+How to enter data inside the tables:
+1)To add records inside a database table, 
+open the table with phpMyAdmin and click the Insert tab. 
+Enter the desired data in the corresponding fields and click on the Go button to store it. 
+You can see the newly inserted record by clicking on the Browse tab.
+SQL queries for database,tables,and data:
+SELECT * FROM `appointment table`
+SELECT * FROM `doctor table`
+SELECT * FROM `patient table`
+SELECT * FROM `report table
+ALTER TABLE `appointment table` DROP FOREIGN KEY `appointment table_ibfk_1`; ALTER TABLE `appointment table` ADD CONSTRAINT `appointment table_ibfk_1` FOREIGN KEY (`did`) REFERENCES `doctor table`(`did`) ON DELETE RESTRICT ON UPDATE RESTRICT;
+ALTER TABLE `appointment table` DROP FOREIGN KEY `appointment table_ibfk_2`; ALTER TABLE `appointment table` ADD CONSTRAINT `appointment table_ibfk_2` FOREIGN KEY (`did`) REFERENCES `patient table`(`Pid`) ON DELETE RESTRICT ON UPDATE RESTRICT;

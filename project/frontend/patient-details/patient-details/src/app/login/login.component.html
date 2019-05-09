@@ -1,0 +1,37 @@
+<div style="display: flex;align-items: center;justify-content: center;height: 100vh;width: 100%;">
+  <div class="bg-white">
+    <div style="display:flex;align-items: center;justify-content: center;">
+      <h1>Login Form</h1> 
+    </div>
+      <br>
+    <form nz-form  class="login-form" (ngSubmit)="submitForm()">
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group>
+            <input nz-input placeholder="Email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <nz-input-group>
+            <input nz-input type="password" placeholder="Password"  />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control>
+          <label nz-checkbox>
+            <span>Remember me</span>
+          </label>
+          <a class="login-form-forgot" class="login-form-forgot">Forgot password</a>
+          <a nz-button class="login-form-button" [nzType]="'primary'" href="/home">Log in</a>
+          Or
+          <a href="/signup">register now!</a>
+        </nz-form-control>
+      </nz-form-item>
+    </form>
+    <ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+    <ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>
+  </div>
+</div>
