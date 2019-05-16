@@ -28,7 +28,7 @@ namespace MyContextAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.Configure<AppSetting>(Configuration.GetSection("AppSettings"));
             // use in memory database
             services.AddScoped<IPatientService, PatientService>();
             services.AddDbContext<MyDbContext>(options => options.UseInMemoryDatabase("mydb"));

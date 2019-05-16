@@ -6,7 +6,7 @@ namespace MyContextAPI.Controllers
     [Route("api/[controller]")]
     public class BaseController : ControllerBase
     {
-        public  AppSettings _appSettings;
+        public  AppSetting _appSettings;
         public BaseController( )
         { 
         }

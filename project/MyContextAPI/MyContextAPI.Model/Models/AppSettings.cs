@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MyContextAPI.Model.Models
 {
-    public class AppSettings
+    public class AppSetting
     {
         public string Info { get; set; }
     }

@@ -16,10 +16,7 @@ namespace MyContextAPI.Controllers
         public IActionResult GetPatients()
         {
             List<PatientDTO> PatientList = new List<PatientDTO>();
-            PatientList.Add(new PatientDTO {  PatientNo = "PT00001", CancerType="Blood", CancerTypeID = 1 });
-            PatientList.Add(new PatientDTO {  PatientNo = "PT00002", CancerType = "Blood", CancerTypeID = 1 });
-            PatientList.Add(new PatientDTO {  PatientNo = "PT00003", CancerType = "Blood", CancerTypeID = 1 });
-            PatientList.Add(new PatientDTO {  PatientNo = "PT00004", CancerType = "Blood", CancerTypeID = 1 });
+            PatientList.Add(new PatientDTO {  PatientNo = "PT00001",  PatientReference="Blood" }); PatientList.Add(new PatientDTO { PatientNo = "PT00001", PatientReference = "Blood" });
             return Ok(PatientList);
         }
 

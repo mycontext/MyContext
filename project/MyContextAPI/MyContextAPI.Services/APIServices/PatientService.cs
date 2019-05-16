@@ -24,15 +24,17 @@ namespace MyContextAPI.Services.APIServices
 
         public async Task<IEnumerable<PatientDTO>> GetPatientsAsync()
         {
-            List<PatientDTO> DTOLst ;
+            List<PatientDTO> DTOLst= new List<PatientDTO>() ;
             try
             {
                 IEnumerable<Patient> DataList =_context.Patients.Find(new BsonDocument()).ToEnumerable();
                 foreach (Patient patient in DataList)
                 {
                     DTOLst.Add(new PatientDTO() {
-                         CancerType=patient.CancerType,
-                         ID
+                        ID=patient.Id,
+                        PatientReference = patient.PatientReference,
+                        PatientNo = patient.PatientNo,
+
 
                     });
                 }

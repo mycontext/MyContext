@@ -11,7 +11,7 @@ namespace MyContextAPI.Controllers
 
     public class CompanyController : BaseController
     {
-        public CompanyController(IOptions<AppSettings> options)
+        public CompanyController(IOptions<AppSetting> options)
         {
             _appSettings = options.Value;
         }
