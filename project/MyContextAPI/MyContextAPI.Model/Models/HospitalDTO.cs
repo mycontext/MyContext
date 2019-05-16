@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyContextAPI.Model.Model
+namespace MyContextAPI.Model.Models
 {
     public class HospitalDTO : Resource
     {
