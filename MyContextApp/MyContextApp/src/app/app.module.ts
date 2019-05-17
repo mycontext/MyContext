@@ -8,14 +8,20 @@ import {PopupModule} from 'ng2-opd-popup';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PatientListComponent } from './patient-list.component';
-import { PatientComponent } from './patient.component';
-import { MedicalReportListComponent } from './medical-report-list.component';
-import { MedicalReportComponent } from './medical-report.component';
-import { MedicalReportAddFormComponent } from './medical-report-add-form.component';
-import { MedicalReportEditFormComponent } from './medical-report-edit-form.component';
-import {PatientService} from './patient.service';
-import {MedicalReportService} from './medical-report.service';
+import { PatientListComponent } from './hospital-dashboard/patients/patient-list.component';
+import { PatientComponent } from './hospital-dashboard/patients/patient.component';
+import { MedicalReportListComponent } from './hospital-dashboard/medical-report/medical-report-list.component';
+import { MedicalReportComponent } from './hospital-dashboard/medical-report/medical-report.component';
+import { MedicalReportAddFormComponent } from './hospital-dashboard/medical-report/medical-report-add-form.component';
+import { MedicalReportEditFormComponent } from './hospital-dashboard/medical-report/medical-report-edit-form.component';
+import {PatientService} from './hospital-dashboard/patients/patient.service';
+import {MedicalReportService} from './hospital-dashboard/medical-report/medical-report.service';
+
+import { MyRequestComponent } from './patient-dashboard/requests/my-request.component';
+import { MyMedicalReportComponent } from './patient-dashboard/medical-report/my-medical-reports.component';
+import {MyMedicalReportService} from './patient-dashboard/medical-report/my-medical-report.service';
+import {RequestService} from './patient-dashboard/requests/my-request.service';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +32,8 @@ import {MedicalReportService} from './medical-report.service';
     MedicalReportListComponent,
     MedicalReportAddFormComponent,
     MedicalReportEditFormComponent,
-    
+    MyMedicalReportComponent,
+    MyRequestComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,9 @@ import {MedicalReportService} from './medical-report.service';
   ],
   providers: [
     PatientService,
-    MedicalReportService
+    MedicalReportService,
+    MyMedicalReportService,
+    RequestService
 
   ],
   bootstrap: [AppComponent]

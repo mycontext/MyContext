@@ -66,50 +66,50 @@ delete(reportItem){
 
 reportItems=[
             {
-                p_id:1,
-                mr_id:101,
+                p_id:7789,
+                mr_id:900128,
                 mr_date:"2/4/2019",
                 mr_type:"RBC",
                 mr_diagnosis:"Normal"
 
             },
             {
-                p_id:1,
-                mr_id:102,
+                p_id:7789,
+                mr_id:900658,
                 mr_date:"1/8/2019",
                 mr_type:"WBC",
                 mr_diagnosis:"Very Bad"
 
             },
             {
-                p_id:2,
-                mr_id:103,
+                p_id:7877,
+                mr_id:900777,
                 mr_date:"3/3/2019",
                 mr_type:"X-RAY",
                 mr_diagnosis:"Normal"
 
             },
             {
-                p_id:3,
-                mr_id:104,
+                p_id:7999,
+                mr_id:908784,
                 mr_date:"3/3/2019",
                 mr_type:"MAMMOGRAM",
                 mr_diagnosis:"Normal"
     
             },
             {
-                p_id:3,
-                mr_id:105,
+                p_id:7999,
+                mr_id:904835,
                 mr_date:"3/3/2019",
                 mr_type:"ULTRASOUND",
                 mr_diagnosis:"Bad"
 
             },
             {
-                p_id:3,
-                mr_id:106,
+                p_id:7999,
+                mr_id:912486,
                 mr_date:"3/3/2019",
-                mr_type:"Biospy",
+                mr_type:"RBC",
                 mr_diagnosis:"Good"
     
             }

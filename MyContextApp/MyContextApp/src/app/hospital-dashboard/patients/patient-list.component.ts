@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 
-import {MedicalReportService} from './medical-report.service'
+import {MedicalReportService} from '../medical-report/medical-report.service'
 import {PatientService} from './patient.service';
 
 @Component({

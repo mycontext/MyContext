@@ -20,21 +20,21 @@ export class PatientService{
 
     patientItems=[
         {
-        p_id:1,
+        p_id:7789,
         p_name:"John Smith",
         p_dob:"21/12/1991",
         p_bloodGroup:"O+",
         p_sex:"M"
 
         },{
-        p_id:2,
+        p_id:7877,
         p_name:"Kim West",
         p_dob:"1/11/1995",
         p_bloodGroup:"A+",
         p_sex:"M"
 
         },{
-        p_id:3,
+        p_id:7999,
         p_name:"Sakura Nara",
         p_dob:"13/07/1997",
         p_bloodGroup:"B-",
