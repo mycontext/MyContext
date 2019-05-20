@@ -1,0 +1,47 @@
+<div style="display: flex;align-items: center;justify-content: center;height: 100vh;width: 100%;">
+    <div class="bg-white">
+      <div style="display:flex;align-items: center;justify-content: center;">
+        <h1>Sign up</h1> 
+      </div>
+      <br>
+      <form nz-form  class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group>
+              <input nz-input placeholder="email" />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group>
+              <input nz-input type="password" placeholder="password"  />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group>
+              <input nz-input type="password" placeholder="re-enter password"  />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group>
+              <input nz-input type="text" placeholder="number"  />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <a nz-button class="login-form-button" [nzType]="'primary'" href="/">register now</a>
+            Or
+            <a href="/">login</a>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+      <ng-template #prefixUser><i nz-icon type="user"></i></ng-template>
+      <ng-template #prefixLock><i nz-icon type="lock"></i></ng-template>
+    </div>
+  </div>
