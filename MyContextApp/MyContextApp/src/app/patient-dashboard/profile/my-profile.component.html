@@ -1,0 +1,58 @@
+<nav class = "row">
+<a routerLink="/myprofile" class="btn btn-default col-md-3">My Profile</a>
+    <a routerLink="/myreportlist" class="btn btn-default col-md-3">Medical Report</a>
+    <a routerLink="/myrequest" class="btn btn-default col-md-3">View Requests</a>
+    <!-- <a routerLink="/reportlist" class="btn btn-default col-md-3">View Medical Report List</a> -->
+</nav>
+
+<h2>My Profile</h2>
+<br>
+
+<form  
+[formGroup]="form"
+(ngSubmit)="onSubmit(form.value)">
+
+
+<div class="profilepic ">
+    <img src="assets/images/profile_pic.jpg" alt="image" width="200px" height="200px " class="img-thumbnail">
+</div>
+
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Patient ID</label>
+<div class="col-sm-4">
+<input class="form-control" type="text"  name="p_id" id="p_id" formControlName="p_id"> 
+</div>
+</div>
+
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Patient Name</label>
+<div class="col-sm-4">
+<input class="form-control" type="text"  name="mr_id" id="p_name" formControlName="p_name">
+</div>
+</div>
+
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Date of Birth</label>
+<div class="col-sm-4">
+<input class="form-control" type="text"  name="mr_date" id="dob" formControlName="dob">
+</div>
+</div>
+
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Blood Group</label>
+<div class="col-sm-4">
+<input class="form-control" type="text"  name="mr_type" id="blood_group" formControlName="blood_group">
+</div>
+</div>
+
+<div class="form-group row ">
+<label class="col-sm-2 col-form-label">Sex</label>
+<div class="col-sm-4">
+<input class="form-control" type="text"  name="mr_diagnosis" id="sex" formControlName="sex">
+</div>
+</div>
+
+<!-- <button type="submit" class="btn btn-info">EDIT</button> -->
+
+</form>
+    
