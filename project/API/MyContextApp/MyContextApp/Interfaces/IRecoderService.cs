@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 
 namespace MyContextApp.Interfaces
 {
-    public interface IRecoderService
+    public interface IRecorderService
     {
 
-        Task<IEnumerable<RecoderDto>> GetAll();
-        Task<RecoderDto> GetById(int id);
-        Task<RecoderDto> Create(RecoderDto model);
-        void Update(RecoderDto model);
+        Task<IEnumerable<RecorderDto>> GetAll();
+        Task<RecorderDto> GetById(int id);
+        Task<RecorderDto> Create(RecorderDto model);
+        void Update(RecorderDto model);
         void Delete(int id);
     }
 }

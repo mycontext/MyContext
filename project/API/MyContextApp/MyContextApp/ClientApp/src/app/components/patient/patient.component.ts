@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './patient.component.html'
 })
 export class PatientComponent {
-  public forecasts: PatientDto[];
+  public patientList: PatientDto[];
 
   constructor(http: HttpClient, @Inject('BASE_URL') baseUrl: string) {
     http.get<PatientDto[]>(baseUrl + 'api/patient').subscribe(result => {
-      this.forecasts = result;
+      this.patientList = result;
     }, error => console.error(error));
   }
 }

@@ -2,7 +2,7 @@
 
 namespace MyContextApp.Models
 {
-    public class RecoderDto
+    public class RecorderDto
     {
         public long Id { get; set; }
         public Guid UserId { get; set; }

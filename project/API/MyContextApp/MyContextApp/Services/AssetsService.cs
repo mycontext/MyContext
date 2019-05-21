@@ -20,7 +20,7 @@ namespace MyContextApp.Services
         public async Task<IEnumerable<AssetDto>> GetAll()
         {
             List<AssetDto> assets = new List<AssetDto>();
-            var data = _context.Assets.Where(c => c.Id > 0);
+            var data = _context.Asset.Where(c => c.Id > 0);
             foreach (var asset in data)
             {
                 assets.Add(new AssetDto()
@@ -38,7 +38,7 @@ namespace MyContextApp.Services
 
         public async Task<AssetDto> GetById(int id)
         {
-            var data = _context.Assets.Find(id);
+            var data = _context.Asset.Find(id);
             AssetDto asset = new AssetDto();
             asset.Description = data.Description;
             asset.ReferenceNo = data.ReferenceNo;
@@ -57,7 +57,7 @@ namespace MyContextApp.Services
             asset.PatientId = newAsset.PatientId;
             asset.RecorderId = newAsset.RecorderId;
 
-            _context.Assets.Add(asset);
+            _context.Asset.Add(asset);
             _context.SaveChanges();
             newAsset.Id = asset.Id;
             return newAsset;
@@ -65,14 +65,14 @@ namespace MyContextApp.Services
 
         public async void Update(AssetDto newAsset)
         {
-            var asset = _context.Assets.Find(newAsset.Id);
+            var asset = _context.Asset.Find(newAsset.Id);
             if (asset != null)
             {
                 asset.Description = newAsset.Description;
                 asset.ReferenceNo = newAsset.ReferenceNo;
                 asset.PatientId = newAsset.PatientId;
                 asset.RecorderId = newAsset.RecorderId;
-                _context.Assets.Update(asset);
+                _context.Asset.Update(asset);
                 _context.SaveChanges();
             }
 
@@ -80,10 +80,10 @@ namespace MyContextApp.Services
 
         public async void Delete(int id)
         {
-            var asset = _context.Assets.Find(id);
+            var asset = _context.Asset.Find(id);
             if (asset != null)
             {
-                _context.Assets.Remove(asset);
+                _context.Asset.Remove(asset);
                 _context.SaveChanges();
             }
         }

@@ -1,0 +1,30 @@
+<h1>Buyer</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!buyerList"><em>Loading...</em></p>
+
+<table class='table' *ngIf="buyerList">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>UserId</th>
+      <th>Reference (F)</th>
+      <th>ChainId</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let buyer of buyerList">
+      <td>{{ buyer.id }}</td>
+      <td>{{ buyer.userId }}</td>
+      <td>{{ buyer.referenceNo }}</td>
+      <td>{{ buyer.chainId }}</td>
+      <td>{{ buyer.description }}</td>
+      <td>
+        <a href="#"><i class="glyphicon glyphicon-pencil"></i></a> &nbsp;
+        <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
+      </td>
+    </tr>
+  </tbody>
+</table>

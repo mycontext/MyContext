@@ -33,17 +33,33 @@ namespace MyContextApp.Data
             // Add a test user
             var user = new ApplicationUser
             {
-                Email = "anish@mycontext.local",
-                UserName = "anish@mycontext.local",
+                Email = "patient@mycontext.local",
+                UserName = "patient@mycontext.local",
                 SecurityStamp = Guid.NewGuid().ToString(),
                 
             };
+            var user1 = new ApplicationUser
+            {
+                Email = "buyer@mycontext.local",
+                UserName = "buyer@mycontext.local",
+                SecurityStamp = Guid.NewGuid().ToString(),
 
+            };
+            var user2 = new ApplicationUser
+            {
+                Email = "recorder@mycontext.local",
+                UserName = "recorder@mycontext.local",
+                SecurityStamp = Guid.NewGuid().ToString(),
+
+            };
+
+            await userManager.CreateAsync(user1, "Supersecret123!!");
+            await userManager.CreateAsync(user2, "Supersecret123!!");
             await userManager.CreateAsync(user, "Supersecret123!!");
 
             // Put the user in the admin role
-          //  await userManager.AddToRoleAsync(user, "Admin");
-          //  await userManager.UpdateAsync(user);
+            //  await userManager.AddToRoleAsync(user, "Admin");
+            //  await userManager.UpdateAsync(user);
         }
         //private readonly ApplicationDbContext _context;
         //public SeedData(ApplicationDbContext  context)

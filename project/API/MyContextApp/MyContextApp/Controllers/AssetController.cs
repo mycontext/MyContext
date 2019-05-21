@@ -23,7 +23,7 @@ namespace MyAPI.Controllers
         public IActionResult Get()
         {
             var data = _userService.GetAll();
-            return Ok(data);
+            return Ok(data.Result);
         }
 
         // GET api/<controller>/5

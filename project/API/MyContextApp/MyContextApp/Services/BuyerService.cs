@@ -20,7 +20,7 @@ namespace MyContextApp.Services
         public async Task<IEnumerable<BuyerDto>> GetAll()
         {
             List<BuyerDto> mdoelList = new List<BuyerDto>();
-            var data = _context.BuyerParticipants.Where(c => c.Id > 0);
+            var data = _context.BuyerParticipant.Where(c => c.Id > 0);
             foreach (var asset in data)
             {
                 mdoelList.Add(new BuyerDto()
@@ -38,7 +38,7 @@ namespace MyContextApp.Services
 
         public async Task<BuyerDto> GetById(int id)
         {
-            var data = _context.BuyerParticipants.Find(id);
+            var data = _context.BuyerParticipant.Find(id);
             BuyerDto model = new BuyerDto() {
                 
             };
@@ -58,7 +58,7 @@ namespace MyContextApp.Services
                 UserId = model.UserId
             };
 
-            _context.BuyerParticipants.Add(data);
+            _context.BuyerParticipant.Add(data);
             _context.SaveChanges();
             model.Id = data.Id;
             return model;
@@ -66,7 +66,7 @@ namespace MyContextApp.Services
 
         public async void Update(BuyerDto model)
         {
-            var data = _context.BuyerParticipants.Find(model.Id);
+            var data = _context.BuyerParticipant.Find(model.Id);
             if (data != null)
             {
                 data.Description = model.Description;
@@ -74,7 +74,7 @@ namespace MyContextApp.Services
                 data.Id = model.Id;
                 data.ChainId = model.ChainId;
                 data.UserId = model.UserId;
-                _context.BuyerParticipants.Update(data);
+                _context.BuyerParticipant.Update(data);
                 _context.SaveChanges();
             }
 
@@ -82,10 +82,10 @@ namespace MyContextApp.Services
 
         public async void Delete(int id)
         {
-            var data = _context.BuyerParticipants.Find(id);
+            var data = _context.BuyerParticipant.Find(id);
             if (data != null)
             {
-                _context.BuyerParticipants.Remove(data);
+                _context.BuyerParticipant.Remove(data);
                 _context.SaveChanges();
             }
         }
