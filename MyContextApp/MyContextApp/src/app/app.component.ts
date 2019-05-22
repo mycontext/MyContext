@@ -8,19 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MyContext Web App';
 
-  onPatientDelete(patientItem){}
-  onPatientEdit(patientItem){}
-  onPatientShowReport(patientItem){}
-
-  firstPatientItem={
-    p_id:1,
-    p_name:"kakashi hatake",
-    p_dob:"21/12/1991",
-    p_bloodGroup:"O+",
-    p_sex:"m"
-
-
-
-  };
 
 }

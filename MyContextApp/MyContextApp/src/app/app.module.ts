@@ -17,6 +17,8 @@ import { MedicalReportEditFormComponent } from './hospital-dashboard/medical-rep
 import {PatientService} from './hospital-dashboard/patients/patient.service';
 import {MedicalReportService} from './hospital-dashboard/medical-report/medical-report.service';
 
+
+import { MyProfileComponent } from './patient-dashboard/profile/my-profile.component';
 import { MyRequestComponent } from './patient-dashboard/requests/my-request.component';
 import { MyMedicalReportComponent } from './patient-dashboard/medical-report/my-medical-reports.component';
 import {MyMedicalReportService} from './patient-dashboard/medical-report/my-medical-report.service';
@@ -33,7 +35,8 @@ import {RequestService} from './patient-dashboard/requests/my-request.service';
     MedicalReportAddFormComponent,
     MedicalReportEditFormComponent,
     MyMedicalReportComponent,
-    MyRequestComponent
+    MyRequestComponent,
+    MyProfileComponent
   ],
   imports: [
     BrowserModule,
