@@ -1,0 +1,84 @@
+<nz-layout class="layout">
+    <nz-header>
+      <div class="logo"></div>
+      <ul nz-menu [nzTheme]="'dark'" [nzMode]="'horizontal'" style="line-height: 64px;">
+          <li nz-menu-item><a href="/home">Home</a></li>
+        </ul>
+    </nz-header>
+    <nz-content style="padding:0 50px;">
+      <nz-breadcrumb style="margin:16px 0;">
+        <nz-breadcrumb-item>Medical Reports</nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <div style="background:#fff; padding: 24px; min-height:100px">
+        <div>
+          <nz-table #basicTable [nzData]="listOfData">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Report</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let data of basicTable.data">
+                <td>{{ data.name }}</td>
+                <td>{{ data.age }}</td>
+                <td>{{ data.address }}</td>
+                <td>{{ data.report }}</td>
+                <td>
+                  <a>Action 一 {{ data.name }}</a>
+                  <nz-divider nzType="vertical"></nz-divider>
+                  <a>Update</a>
+                  <nz-divider nzType="vertical"></nz-divider>
+                  <a>Delete</a>
+                  
+                </td>
+              </tr>
+            </tbody>
+          </nz-table>
+        </div>
+      </div>
+    </nz-content>
+    <!-- view requests from buyers -->
+    <nz-content style="padding:0 50px;">
+        <nz-breadcrumb style="margin:16px 0;">
+          <nz-breadcrumb-item>Requested Buyers</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <div style="background:#fff; padding: 24px; min-height:100px">
+          <div>
+            <nz-table #basicTable [nzData]="listOfData">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Age</th>
+                  <th>Address</th>
+                  <th>Report</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let data of basicTable.data">
+                  <td>{{ data.name }}</td>
+                  <td>{{ data.age }}</td>
+                  <td>{{ data.address }}</td>
+                  <td>{{ data.report }}</td>
+                  <td>
+                    <a>Buyer 一 {{ data.name }}</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a>Accept</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a>Modify</a>
+                    <nz-divider nzType="vertical"></nz-divider>
+                    <a>Decline</a>
+                    
+                  </td>
+                </tr>
+              </tbody>
+            </nz-table>
+          </div>
+        </div>
+      </nz-content>
+    <nz-footer style="text-align: center;">Patient / Hospital / Buyer ©2019</nz-footer>
+  </nz-layout>
