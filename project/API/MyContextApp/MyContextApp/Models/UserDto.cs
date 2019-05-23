@@ -15,5 +15,7 @@ namespace MyContextApp.Models
         public string Email { get; set; }
         [Required(ErrorMessage = "required")]
         public string ConfirmPassword { get; set; }
+        public int AccountType { get; set; }
+
     }
 }

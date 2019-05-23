@@ -44,7 +44,12 @@
             </li>
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/asset"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-th-list'></span> Asset Data 
+                <span class='glyphicon glyphicon-th-list'></span> Asset Data
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/transaction"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Transaction
               </a>
             </li>
           </ul>

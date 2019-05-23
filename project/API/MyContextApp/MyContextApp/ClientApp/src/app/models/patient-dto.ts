@@ -1,4 +1,4 @@
-interface PatientDto {
+export class PatientDto {
   id: number;
   userId: string;
   referenceNo: string;

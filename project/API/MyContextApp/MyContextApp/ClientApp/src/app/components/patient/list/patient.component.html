@@ -3,7 +3,9 @@
 <p>This component demonstrates fetching data from the server.</p>
 
 <p *ngIf="!patientList"><em>Loading...</em></p>
-
+<button routerLink="/patient/add"   (click)='collapse()'>
+  <span class='glyphicon glyphicon-pencil'></span> Add
+</button>
 <table class='table' *ngIf="patientList">
   <thead>
     <tr>
@@ -23,7 +25,7 @@
       <td>{{ patient.description }}</td>
       <td>
         <a href="#"><i class="glyphicon glyphicon-pencil"></i></a> &nbsp;
-        <a href="#"><i class="glyphicon glyphicon-trash"></i></a> 
+        <a href="#"><i class="glyphicon glyphicon-trash"></i></a>
       </td>
     </tr>
   </tbody>

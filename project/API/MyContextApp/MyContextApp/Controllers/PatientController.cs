@@ -36,7 +36,7 @@ namespace MyAPI.Controllers
 
         // POST api/<controller>
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]RegisterDto value)
         {
         }
 
