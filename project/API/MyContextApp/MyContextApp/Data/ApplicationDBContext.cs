@@ -14,10 +14,10 @@ namespace MyContextApp.Data
         {
 
         }
-        public DbSet<Asset> Assets { get; set; }
+        public DbSet<Asset> Asset { get; set; }
         public DbSet<PatientParticipant> PatientParticipant { get; set; }
-        public DbSet<RecoderParticipant> RecoderParticipants { get; set; }
-        public DbSet<BuyerParticipant> BuyerParticipants { get; set; }
+        public DbSet<RecoderParticipant> RecoderParticipant { get; set; }
+        public DbSet<BuyerParticipant> BuyerParticipant { get; set; }
         public DbSet<TransactionPatientToBuyber> Transactions { get; set; }
         //public DbSet<TransactionPatientToRecoder> Tansactions2 { get; set; }
 

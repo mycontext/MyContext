@@ -11,10 +11,10 @@ using MyContextApp.Models;
 namespace MyAPI.Controllers
 {
     [Route("api/[controller]")]
-    public class PatientController : ControllerBase
+    public class RecorderController : ControllerBase
     {
-        private IPatientService _service;
-        public PatientController(IPatientService service)
+        private IRecorderService _service;
+        public RecorderController(IRecorderService service)
         {
             _service = service;
         }
@@ -42,7 +42,7 @@ namespace MyAPI.Controllers
 
         // PUT api/<controller>/5
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody]PatientDto value)
+        public IActionResult Put(int id, [FromBody]RecorderDto value)
         {
               
             _service.Update(value);

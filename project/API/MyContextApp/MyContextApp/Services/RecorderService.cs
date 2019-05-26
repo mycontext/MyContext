@@ -8,21 +8,21 @@ using MyContextApp.Models;
 
 namespace MyContextApp.Services
 {
-    public class RecoderService : IRecoderService
+    public class RecorderService : IRecorderService
     {
         private ApplicationDbContext _context;
-        public RecoderService(ApplicationDbContext context)
+        public RecorderService(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public async Task<IEnumerable<RecoderDto>> GetAll()
+        public async Task<IEnumerable<RecorderDto>> GetAll()
         {
-            List<RecoderDto> mdoelList = new List<RecoderDto>();
-            var data = _context.RecoderParticipants.Where(c => c.Id > 0);
+            List<RecorderDto> mdoelList = new List<RecorderDto>();
+            var data = _context.RecoderParticipant.Where(c => c.Id > 0);
             foreach (var asset in data)
             {
-                mdoelList.Add(new RecoderDto()
+                mdoelList.Add(new RecorderDto()
                 {
                     Description = asset.Description,
                     ReferenceNo = asset.ReferenceNo,
@@ -35,17 +35,17 @@ namespace MyContextApp.Services
             return mdoelList;
         }
 
-        public async Task<RecoderDto> GetById(int id)
+        public async Task<RecorderDto> GetById(int id)
         {
-            var data = _context.RecoderParticipants.Find(id);
-            RecoderDto model = new RecoderDto() {
+            var data = _context.RecoderParticipant.Find(id);
+            RecorderDto model = new RecorderDto() {
                 
             };
            
             return model;
         }
 
-        public async Task<RecoderDto> Create(RecoderDto model)
+        public async Task<RecorderDto> Create(RecorderDto model)
         {
             // validation
             RecoderParticipant data = new RecoderParticipant()
@@ -57,15 +57,15 @@ namespace MyContextApp.Services
                 UserId = model.UserId
             };
 
-            _context.RecoderParticipants.Add(data);
+            _context.RecoderParticipant.Add(data);
             _context.SaveChanges();
             model.Id = data.Id;
             return model;
         }
 
-        public async void Update(RecoderDto model)
+        public async void Update(RecorderDto model)
         {
-            var data = _context.RecoderParticipants.Find(model.Id);
+            var data = _context.RecoderParticipant.Find(model.Id);
             if (data != null)
             {
                 data.Description = model.Description;
@@ -73,7 +73,7 @@ namespace MyContextApp.Services
                 data.Id = model.Id;
                 data.ChainId = model.ChainId;
                 data.UserId = model.UserId;
-                _context.RecoderParticipants.Update(data);
+                _context.RecoderParticipant.Update(data);
                 _context.SaveChanges();
             }
 
@@ -81,10 +81,10 @@ namespace MyContextApp.Services
 
         public async void Delete(int id)
         {
-            var data = _context.RecoderParticipants.Find(id);
+            var data = _context.RecoderParticipant.Find(id);
             if (data != null)
             {
-                _context.RecoderParticipants.Remove(data);
+                _context.RecoderParticipant.Remove(data);
                 _context.SaveChanges();
             }
         }

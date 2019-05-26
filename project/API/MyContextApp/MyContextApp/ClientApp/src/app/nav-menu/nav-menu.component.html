@@ -17,19 +17,34 @@
                 <span class='glyphicon glyphicon-home'></span> Home
               </a>
             </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/counter"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-education'></span> Counter
-              </a>
-            </li>
-            <li [routerLinkActive]='["link-active"]'>
-              <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-th-list'></span> Fetch data
-              </a>
-            </li>
+            <!--<li [routerLinkActive]='["link-active"]'>
+    <a [routerLink]='["/counter"]' (click)='collapse()'>
+      <span class='glyphicon glyphicon-education'></span> Counter
+    </a>
+  </li>
+  <li [routerLinkActive]='["link-active"]'>
+    <a [routerLink]='["/fetch-data"]' (click)='collapse()'>
+      <span class='glyphicon glyphicon-th-list'></span> Fetch data
+    </a>
+  </li>-->
             <li [routerLinkActive]='["link-active"]'>
               <a [routerLink]='["/patient"]' (click)='collapse()'>
-                <span class='glyphicon glyphicon-th-list'></span> Fetch data
+                <span class='glyphicon glyphicon-th-list'></span> Patients
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/buyer"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span>Buyer
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/recorder"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span>Recorder
+              </a>
+            </li>
+            <li [routerLinkActive]='["link-active"]'>
+              <a [routerLink]='["/asset"]' (click)='collapse()'>
+                <span class='glyphicon glyphicon-th-list'></span> Asset Data 
               </a>
             </li>
           </ul>

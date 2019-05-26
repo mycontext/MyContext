@@ -1,8 +1,8 @@
-<h1>Weather forecast</h1>
+<h1>Patient</h1>
 
 <p>This component demonstrates fetching data from the server.</p>
 
-<p *ngIf="!loading"><em>Loading...</em></p>
+<p *ngIf="!patientList"><em>Loading...</em></p>
 
 <table class='table' *ngIf="patientList">
   <thead>
@@ -12,14 +12,19 @@
       <th>Reference (F)</th>
       <th>ChainId</th>
       <th>Desc</th>
+      <th>Action</th>
     </tr>
   </thead>
   <tbody>
     <tr *ngFor="let patient of patientList">
-      <td>{{ forecast.dateFormatted }}</td>
-      <td>{{ forecast.temperatureC }}</td>
-      <td>{{ forecast.temperatureF }}</td>
-      <td>{{ forecast.summary }}</td>
+      <td>{{ patient.id }}</td>
+      <td>{{ patient.userId }}</td>
+      <td>{{ patient.referenceNo }}</td>
+      <td>{{ patient.description }}</td>
+      <td>
+        <a href="#"><i class="glyphicon glyphicon-pencil"></i></a> &nbsp;
+        <a href="#"><i class="glyphicon glyphicon-trash"></i></a> 
+      </td>
     </tr>
   </tbody>
 </table>

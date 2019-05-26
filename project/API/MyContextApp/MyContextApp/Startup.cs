@@ -35,7 +35,7 @@ namespace MyContextApp
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IPatientService, PatientService>();
             services.AddScoped<IBuyerService, BuyerService>();
-            services.AddScoped<IRecoderService, RecoderService>();
+            services.AddScoped<IRecorderService, RecorderService>();
             services.AddScoped<IAssetsService, AssetsService>();
 
             AddIdentityCoreServices(services);
