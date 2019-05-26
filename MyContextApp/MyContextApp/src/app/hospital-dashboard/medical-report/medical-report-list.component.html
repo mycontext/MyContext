@@ -1,0 +1,32 @@
+<nav class = "row">
+    <a routerLink="/addreport" class="btn btn-default col-md-3">Add Report</a>
+    <a routerLink="/patientlist" class="btn btn-default col-md-3">View Patient List</a>
+    <a routerLink="/reportlist" class="btn btn-default col-md-3">View Medical Report List</a>
+</nav>
+
+<div>
+
+<h2>View Medical Reports</h2>
+<br>
+<table class="table table-striped table-hover">
+        <tr>
+            <th>Patient ID</th>
+            <th>Report ID</th>
+            <th>Report Date</th>
+            <th>Report Type</th>
+            <th>Diagnosis</th>
+            <th>Action</th>
+        </tr>
+    
+        <tr *ngFor="let reportItem of reportItems"
+        m-report [reportItem]="reportItem"
+        (delete)="onReportDelete($event)"
+        (edit)="onReportEdit($event)"></tr>
+    
+</table>
+
+</div>
+
+<popup #popup1 (confirmClick)="YourConfirmEvent()" (cancelClick)="YourCancelEvent()">
+    Are you sure you want to delete Medical Report: {{currentReportItem.mr_id}}?
+</popup>

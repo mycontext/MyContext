@@ -1,0 +1,44 @@
+<nav class = "row">
+<a routerLink="/myprofile" class="btn btn-default col-md-3">My Profile</a>
+    <a routerLink="/myreportlist" class="btn btn-default col-md-3">Medical Report</a>
+    <a routerLink="/myrequest" class="btn btn-default col-md-3">View Requests</a>
+    <!-- <a routerLink="/reportlist" class="btn btn-default col-md-3">View Medical Report List</a> -->
+</nav>
+
+<div>
+
+    <h2>View Requests</h2>
+    <br>
+    <table class="table table-striped table-hover">
+            <tr>
+                <th>Buyer ID</th>
+                <th>Buyer Name</th>
+                <th>Request Date</th>
+                <th>Medical Report ID</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th>Action</th>
+            </tr>
+        
+            <tr *ngFor="let requestItem of requestItems">
+        
+            <td>{{requestItem.buyer_id}}</td>
+            <td>{{requestItem.buyer_name}}</td>
+            <td>{{requestItem.request_date}}</td>
+            <td>{{requestItem.mr_id}}</td>
+            <td>{{requestItem.duration}}</td>
+            <td>AU$ {{requestItem.price}}</td>
+            <td>
+                <a class="p_edit btn btn-info" >Message</a><br>
+                <a class="p_edit btn btn-warning" >Modify</a><br>
+                <a class="p_edit btn btn-success" >Accept</a><br>
+                <a class='p_delete btn btn-danger' >Decline</a>
+            
+            </td>
+
+            </tr>
+        
+    </table>
+    
+    </div>
+    

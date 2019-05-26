@@ -1,0 +1,11 @@
+
+<td>{{patientItem.p_id}}</td>
+<td>{{patientItem.p_name}}</td>
+<td>{{patientItem.p_dob}}</td>
+<td>{{patientItem.p_bloodGroup}}</td>
+<td>{{patientItem.p_sex}}</td>
+<td>
+    <a class="p_edit btn btn-info " (click)="onEdit()">Edit</a> <br>
+    <a class='p_delete btn btn-danger' (click)="onDelete()">Delete</a><br>
+    <a class='p_report btn btn-success' (click)="onShowReport(patientItem.p_id)">Report</a>
+</td>

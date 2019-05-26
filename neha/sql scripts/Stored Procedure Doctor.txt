@@ -1,0 +1,158 @@
+# Insert Doctor
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_insertDoctor]    Script Date: 9/05/2019 5:45:20 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[sp_insertDoctor]
+(
+@fullName varchar(100),    
+@license varchar(100),
+@department varchar(100)
+)
+
+AS
+Begin
+insert into Doctor values(@fullName,@license,@department)
+end
+GO
+
+
+
+
+
+
+#Update Doctor
+
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_updateDoctor]    Script Date: 9/05/2019 5:45:36 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE procedure [dbo].[sp_updateDoctor]
+(
+@ID INT,
+@fullName VARCHAR(100),    
+@license VARCHAR(100),
+@department VARCHAR(100)
+)
+
+AS
+Begin
+UPDATE Doctor SET  
+fullName= @fullName, license= @license, department = @department
+WHERE id = @ID
+end
+GO
+
+
+
+
+#Delete Doctor
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_deleteDoctor]    Script Date: 9/05/2019 5:45:49 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create procedure [dbo].[sp_deleteDoctor]
+(
+@ID Int
+
+)
+
+AS
+Begin
+Delete from Doctor
+WHERE id = @ID
+end
+
+GO
+
+
+
+
+
+
+
+#Select Doctor
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectDoctor]    Script Date: 9/05/2019 5:46:26 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectDoctor]
+(
+@ID INT
+
+)
+
+AS
+Begin
+Select * from Doctor
+where id=@ID
+end
+GO
+
+
+
+
+
+
+Select All Doctor
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectAllDoctor]    Script Date: 9/05/2019 5:46:37 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectAllDoctor]
+
+
+AS
+Begin
+Select * from Doctor
+
+end
+GO
+

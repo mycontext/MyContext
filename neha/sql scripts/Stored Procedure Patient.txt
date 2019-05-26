@@ -1,0 +1,160 @@
+#Insert Patient
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_insertPatient]    Script Date: 9/05/2019 5:40:05 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE procedure [dbo].[sp_insertPatient]
+(
+@fullName VARCHAR(10),    
+@dob Date,  
+@bloodGroup VARCHAR(20)
+)
+
+AS
+Begin
+insert into Patient values(@fullName,@dob,@bloodGroup)
+end
+GO
+
+
+
+
+
+
+
+
+
+#Delete Patient
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_deletePatient]    Script Date: 9/05/2019 5:40:44 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+create procedure [dbo].[sp_deletePatient]
+(
+@ID Int
+
+)
+
+AS
+Begin
+Delete from Patient
+WHERE id = @ID
+end
+
+GO
+
+
+
+
+
+
+
+
+#Update Patient
+
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_updatePatient]    Script Date: 9/05/2019 5:41:02 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE procedure [dbo].[sp_updatePatient]
+(
+@ID Int,
+@fullName VARCHAR(10),    
+@dob Date,  
+@bloodGroup VARCHAR(20)
+)
+
+AS
+Begin
+UPDATE Patient SET  
+fullName= @fullName, dob = @dob, bloodGroup = @bloodGroup
+WHERE id = @ID
+end
+GO
+
+
+
+
+
+#Select Patient
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectPatient]    Script Date: 9/05/2019 5:41:23 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE procedure [dbo].[sp_selectPatient]
+(
+@ID INT
+
+)
+
+AS
+Begin
+Select * from Patient
+where id=@ID
+end
+GO
+
+
+
+
+#Select All Patient
+
+USE [Sample_DB1]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sp_selectAllPatient]    Script Date: 9/05/2019 5:41:40 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE procedure [dbo].[sp_selectAllPatient]
+
+
+AS
+Begin
+Select * from Patient
+
+end
+GO
+
+
+
